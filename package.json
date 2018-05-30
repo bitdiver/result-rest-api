@@ -1,7 +1,7 @@
 {
   "name": "@bitdiver/result-rest-api",
   "version": "0.0.0-semantic-release",
-  "description": "",
+  "description": "Result Rest API",
   "main": "lib/index.js",
   "repository": {
     "type": "git",

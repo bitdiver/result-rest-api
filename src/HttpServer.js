@@ -1,11 +1,15 @@
 import cors from 'cors'
 import express from 'express'
 import ArrangoDB from './ArrangoDB'
+import { getLogAdapter } from './logAdapter'
 
 const app = express()
 app.use(cors())
-
 const arrangoDB = new ArrangoDB()
+const LOGGER = getLogAdapter()
+
+// disable console logging
+LOGGER.writeConsole = true
 
 app.get('/runs', async (req, res) => {
   res.send(await arrangoDB.getRuns())
@@ -20,14 +24,12 @@ app.get('/teststeps/:testcaseId', async (req, res) => {
 })
 
 app.get('/health', (req, res) => {
-  // eslint-disable-next-line no-console
-  console.log('/health', req.body)
+  LOGGER.logInfo('/health')
   res.send('OK')
 })
 
 app.on('close', () => {
-  // eslint-disable-next-line no-console
-  console.log('Call server close()')
+  LOGGER.logInfo('Call server close()')
   app.close()
 })
 
@@ -37,8 +39,7 @@ app.on('close', () => {
  * @return app {object} Die Express app
  */
 export async function startServer({ expressPort } = getParameter()) {
-  // eslint-disable-next-line no-console
-  console.log('Rest Service startet at port: ' + expressPort)
+  LOGGER.logInfo('Rest Service startet at port: ' + expressPort)
   // Starten des Express servers
   return new Promise((resolve, reject) => {
     const httpServer = app.listen(expressPort, err => {

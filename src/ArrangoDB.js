@@ -1,6 +1,12 @@
 import { Database } from 'arangojs'
 import { getParameter } from './Environment'
 
+import { getLogAdapter } from './logAdapter'
+const LOGGER = getLogAdapter()
+
+// disable console logging
+LOGGER.writeConsole = true
+
 const envParam = getParameter()
 export const TIMEOUT = 30000
 
@@ -54,8 +60,7 @@ export default class ArrangoDB {
         return doc
       })
       .catch(err => {
-        // eslint-disable-next-line no-console
-        console.log(err)
+        LOGGER.logError(err)
         throw err
       })
   }
@@ -70,8 +75,7 @@ export default class ArrangoDB {
 
     const url = `${scheme}://${username}:${password}@${host}:${port}`
 
-    // eslint-disable-next-line no-console
-    console.log(`Database connection: ${url} on database ${database}`)
+    LOGGER.logInfo(`Database connection: ${url} on database ${database}`)
 
     const db = new Database({ url })
     db.useDatabase(database)
