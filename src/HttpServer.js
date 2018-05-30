@@ -24,7 +24,7 @@ app.get('/teststeps/:testcaseId', async (req, res) => {
 
 app.get('/health', (req, res) => {
   LOGGER.logInfo('/health')
-  res.send('OK')
+  res.send({ health: arrangoDB })
 })
 
 app.on('close', () => {

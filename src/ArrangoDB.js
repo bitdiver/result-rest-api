@@ -6,7 +6,6 @@ const envParam = getParameter()
 const LOGGER = getLogAdapter()
 LOGGER.writeConsole = true
 
-
 export default class ArrangoDB {
   constructor() {
     this.db = this._arangoConnect({
