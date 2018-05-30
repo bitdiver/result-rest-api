@@ -1,0 +1,72 @@
+{
+  "name": "@bitdiver/result-rest-api",
+  "version": "0.0.0-semantic-release",
+  "description": "",
+  "main": "lib/index.js",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/bitdiver/result-rest-api.git"
+    },
+    "bugs": {
+      "url": "https://github.com/bitdiver/result-rest-api/issues"
+    },
+    "homepage": "https://github.com/bitdiver/result-rest-api#readme",
+  "scripts": {
+    "build": "npm run src_format && npm run src_lint && babel src -d lib",
+    "src_lint": "eslint src tests",
+    "src_format": "prettier --no-semi --single-quote --trailing-comma es5 --write \"{src,tests}/**/*.js\"",
+    "test_only": "jest",
+    "test": "npm run build && jest -c jest.config.json",
+    "debug": "npm run build && node --inspect-brk ./node_modules/.bin/jest -i --config=./jest.config.json",
+    "prepare": "npm run build",
+    "doc_readme_docbook": "asciidoctor -b docbook doc/readme.adoc",
+    "doc_readme_markdown": "iconv -t utf-8 doc/readme.xml | pandoc -f docbook -t gfm --wrap=none | iconv -f utf-8 > README.md",
+    "doc": "npm run doc_readme_docbook && npm run doc_readme_markdown",
+    "start": "npm run build && node lib/startServer",
+  },
+  "contributors": [
+     {
+       "name": "Torsten Link",
+       "email": "torstenlink@gmx.de"
+     },
+     {
+       "name": "Makele Ghebreamlak",
+       "email": "makeleg@gmail.com"
+     }
+   ],
+  "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.4.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^4.18.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-mocha": "^4.8.0",
+    "jest": "^22.4.2",
+    "jest-cli": "^22.4.2",
+    "jest-environment-node-debug": "^2.0.0",
+    "jsonfile": "^4.0.0",
+    "prettier": "^1.10.2",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "dependencies": {
+    "arangojs": "^6.2.4",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "sprintf-js": "^1.1.1"
+  }
+}
