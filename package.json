@@ -22,7 +22,7 @@
     "doc_readme_docbook": "asciidoctor -b docbook doc/readme.adoc",
     "doc_readme_markdown": "iconv -t utf-8 doc/readme.xml | pandoc -f docbook -t gfm --wrap=none | iconv -f utf-8 > README.md",
     "doc": "npm run doc_readme_docbook && npm run doc_readme_markdown",
-    "start": "npm run build && node lib/startServer",
+    "start": "npm run build && node lib/startServer"
   },
   "contributors": [
      {
