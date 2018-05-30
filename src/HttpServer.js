@@ -38,7 +38,7 @@ app.on('close', () => {
  */
 export async function startServer({ expressPort } = getParameter()) {
   // eslint-disable-next-line no-console
-  console.log('Server startet at port: ' + expressPort)
+  console.log('Rest Service startet at port: ' + expressPort)
   // Starten des Express servers
   return new Promise((resolve, reject) => {
     const httpServer = app.listen(expressPort, err => {
