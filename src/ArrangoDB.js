@@ -54,6 +54,7 @@ export default class ArrangoDB {
         return doc
       })
       .catch(err => {
+        // eslint-disable-next-line no-console
         console.log(err)
         throw err
       })
