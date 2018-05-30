@@ -20,7 +20,7 @@ app.get('/teststeps/:testcaseId', async (req, res) => {
 })
 
 app.get('/health', (req, res) => {
-  // eslint-disable-next-line no-console  
+  // eslint-disable-next-line no-console
   console.log('/health', req.body)
   res.send('OK')
 })
