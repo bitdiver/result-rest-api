@@ -4,13 +4,13 @@
   "description": "",
   "main": "lib/index.js",
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/bitdiver/result-rest-api.git"
-    },
-    "bugs": {
-      "url": "https://github.com/bitdiver/result-rest-api/issues"
-    },
-    "homepage": "https://github.com/bitdiver/result-rest-api#readme",
+    "type": "git",
+    "url": "git+https://github.com/bitdiver/result-rest-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bitdiver/result-rest-api/issues"
+  },
+  "homepage": "https://github.com/bitdiver/result-rest-api#readme",
   "scripts": {
     "build": "npm run src_format && npm run src_lint && babel src -d lib",
     "src_lint": "eslint src tests",
@@ -25,15 +25,15 @@
     "start": "npm run build && node lib/startServer"
   },
   "contributors": [
-     {
-       "name": "Torsten Link",
-       "email": "torstenlink@gmx.de"
-     },
-     {
-       "name": "Makele Ghebreamlak",
-       "email": "makeleg@gmail.com"
-     }
-   ],
+    {
+      "name": "Torsten Link",
+      "email": "torstenlink@gmx.de"
+    },
+    {
+      "name": "Makele Ghebreamlak",
+      "email": "makeleg@gmail.com"
+    }
+  ],
   "license": "ISC",
   "jest": {
     "testEnvironment": "node"
