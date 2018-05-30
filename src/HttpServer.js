@@ -29,7 +29,7 @@ app.get('/health', (req, res) => {
 })
 
 app.on('close', () => {
-  LOGGER.logInfo('Call server close()')
+  LOGGER.logInfo('Call Server close()')
   app.close()
 })
 

@@ -1,15 +1,12 @@
 import { Database } from 'arangojs'
 import { getParameter } from './Environment'
-
 import { getLogAdapter } from './logAdapter'
-const LOGGER = getLogAdapter()
-
-// disable console logging
-LOGGER.writeConsole = true
 
 const envParam = getParameter()
-export const TIMEOUT = 30000
+const LOGGER = getLogAdapter()
+LOGGER.writeConsole = true
 
+export const TIMEOUT = 30000
 export default class ArrangoDB {
   constructor(opts = {}) {
     this.timeout = opts.timeout ? opts.timeout : TIMEOUT

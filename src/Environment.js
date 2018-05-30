@@ -1,4 +1,6 @@
-'use strict'
+import { getLogAdapter } from './logAdapter'
+const LOGGER = getLogAdapter()
+LOGGER.writeConsole = true
 
 /**
  * Reads all the expetced variables and checks that they exsist
@@ -22,8 +24,7 @@ function _validate(obj) {
   let err = false
   Object.keys(obj).forEach(name => {
     if (!obj[name]) {
-      // eslint-disable-next-line no-console
-      console.log(`The env variable '${name.toUpperCase()}' is not set`)
+      LOGGER.logWarning(`The env variable '${name.toUpperCase()}' is not set`)
       err = true
     }
   })
