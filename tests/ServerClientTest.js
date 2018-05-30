@@ -9,6 +9,5 @@ test('Start und Stop Server', async done => {
   expect(httpServer).not.toBeUndefined()
   expect(express).not.toBeUndefined()
   httpServer.close()
-  await uicServer.stop()
   done()
 })
