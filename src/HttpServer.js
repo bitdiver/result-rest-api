@@ -1,5 +1,5 @@
-import express from 'express'
 import cors from 'cors'
+import express from 'express'
 import ArrangoDB from './ArrangoDB'
 
 const app = express()
@@ -20,6 +20,7 @@ app.get('/teststeps/:testcaseId', async (req, res) => {
 })
 
 app.get('/health', (req, res) => {
+  // eslint-disable-next-line no-console  
   console.log('/health', req.body)
   res.send('OK')
 })
@@ -56,7 +57,7 @@ export async function startServer({ expressPort } = getParameter()) {
  */
 export function getParameter() {
   const env = {
-    expressPort: process.env.EXPRESS_PORT || 3712,
+    expressPort: process.env.EXPRESS_PORT || 3000,
   }
 
   return env
