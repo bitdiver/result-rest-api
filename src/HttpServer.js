@@ -6,9 +6,8 @@ import { getLogAdapter } from './logAdapter'
 const app = express()
 app.use(cors())
 const arrangoDB = new ArrangoDB()
-const LOGGER = getLogAdapter()
 
-// disable console logging
+const LOGGER = getLogAdapter()
 LOGGER.writeConsole = true
 
 app.get('/runs', async (req, res) => {

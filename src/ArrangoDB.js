@@ -6,10 +6,9 @@ const envParam = getParameter()
 const LOGGER = getLogAdapter()
 LOGGER.writeConsole = true
 
-export const TIMEOUT = 30000
+
 export default class ArrangoDB {
-  constructor(opts = {}) {
-    this.timeout = opts.timeout ? opts.timeout : TIMEOUT
+  constructor() {
     this.db = this._arangoConnect({
       scheme: 'http',
       hostname: envParam.arango_hostname,
