@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bitdiver/result-rest-api.svg?branch=master)](https://travis-ci.org/bitdiver/result-rest-api)
+
 Result Rest API
 ==================================
 
