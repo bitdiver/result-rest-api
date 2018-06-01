@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bitdiver/result-rest-api.svg?branch=master)](https://travis-ci.org/bitdiver/result-rest-api)
+[![Build Status](https://travis-ci.org/bitdiver/result-rest-api.svg?branch=master)](https://travis-ci.org/bitdiver/result-rest-api) [![Greenkeeper badge](https://badges.greenkeeper.io/bitdiver/result-rest-api.svg)](https://greenkeeper.io/)
 
 Result Rest API
 ==================================
