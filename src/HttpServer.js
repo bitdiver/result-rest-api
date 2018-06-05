@@ -22,14 +22,23 @@ app.get('/teststeps/:testcaseId', async (req, res) => {
   res.send(await arrangoDB.getTeststeps(req.params.testcaseId))
 })
 
-app.get('/health', (req, res) => {
-  LOGGER.logInfo('/health')
-  res.send({ health: arrangoDB })
-})
-
 app.on('close', () => {
   LOGGER.logInfo('Call Server close()')
   app.close()
+})
+
+app.get('/ready', (req, res) => {
+  res.send('OK')
+})
+
+app.get('/live', (req, res) => {
+  res.status(200)
+  res.send('OK')
+})
+
+app.get('/health', (req, res) => {
+  LOGGER.logInfo('/health')
+  res.send({ health: arrangoDB })
 })
 
 /**
