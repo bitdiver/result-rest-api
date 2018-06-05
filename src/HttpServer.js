@@ -68,6 +68,5 @@ export function getParameter() {
   const env = {
     expressPort: process.env.EXPRESS_PORT || 3000,
   }
-
   return env
 }
