@@ -21,20 +21,10 @@ export default class ArrangoDB {
   async getRuns() {
     const query =
       'FOR c IN run FOR v IN 1..2 OUTBOUND c runHasLog ' +
+      ' SORT c.meta.run.start DESC ' +
       "FILTER v.data.message == 'Stop Run' RETURN {run: c,  log:v,  runId:c.meta.run.id,   " +
-      'duration_in_min: (v.meta.time  - v.meta.run.start)/1000/60 }'
+      'duration_in_min: CEIL((v.meta.time  - v.meta.run.start)/1000/60) }'
     return this.execute(query)
-  }
-
-  async check() {
-    const query = 'RETURN ' + Date.now()
-    try {
-      this.execute(query)
-      return 0
-    } catch (err) {
-      LOGGER.logError(err)
-      throw err
-    }
   }
 
   getTestcases(runId) {
@@ -54,6 +44,17 @@ export default class ArrangoDB {
       "' testcaseHasStep RETURN testcaseHasStep"
 
     return this.execute(query)
+  }
+
+  async check() {
+    const query = 'RETURN ' + Date.now()
+    try {
+      this.execute(query)
+      return 0
+    } catch (err) {
+      LOGGER.logError(err)
+      throw err
+    }
   }
 
   async execute(query) {
