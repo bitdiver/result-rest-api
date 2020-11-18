@@ -1,0 +1,7 @@
+== LogAdapterDispatcher
+This log adapter dispatches a log event to many given log adapter.
+So you could write to the database and also log to a file log adapter at
+the same time.
+
+The dispatcher has a property ''logAdapterList'' which is an array of
+of log adapter. 
