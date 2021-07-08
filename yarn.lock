@@ -92,6 +92,11 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@types/node@*":
+  version "13.9.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.8.tgz#09976420fc80a7a00bf40680c63815ed8c7616f4"
+  integrity sha512-1WgO8hsyHynlx7nhP1kr0OFzsgKz5XDQL+Lfc3b1Q3qIln/n8cKD4m09NJ0+P1Rq7Zgnc7N0+SsMnoD1rEb0kA==
+
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -198,14 +203,15 @@ aproba@^1.0.3:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
 
-arangojs@^6.2.4:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/arangojs/-/arangojs-6.3.0.tgz#28b9306e756541502c01e7812df6461f6780a2e7"
+arangojs@^6.13.0:
+  version "6.14.0"
+  resolved "https://registry.yarnpkg.com/arangojs/-/arangojs-6.14.0.tgz#f6633e6420556a1bf84575de0ce445a77e75eac2"
+  integrity sha512-s6ScHKJ5T8dpv4m8UdQY+/tvj+eJ8ZtaL+VRnHzkCxmgflt5RbtWLciG5xMWlozOBJYcq5TSobC0TbKcvg6uNA==
   dependencies:
+    "@types/node" "*"
     es6-error "^4.0.1"
-    linkedlist "^1.0.1"
     multi-part "^2.0.0"
-    utf8-length "^0.0.1"
+    x3-linkedlist "1.0.0"
     xhr "^2.4.1"
 
 are-we-there-yet@~1.1.2:
@@ -2939,10 +2945,6 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-linkedlist@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/linkedlist/-/linkedlist-1.0.1.tgz#7b74189bfad6e76367fb5a10f3c36913128b782b"
-
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -4424,10 +4426,6 @@ user-home@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/user-home/-/user-home-1.1.1.tgz#2b5be23a32b63a7c9deb8d0f28d485724a3df190"
 
-utf8-length@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/utf8-length/-/utf8-length-0.0.1.tgz#d315c4bed529c977f18dd35c73d72628327d9ada"
-
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -4586,6 +4584,11 @@ ws@^4.0.0:
   dependencies:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
+
+x3-linkedlist@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/x3-linkedlist/-/x3-linkedlist-1.0.0.tgz#f5a8c7e742cf3b31d7800e031ab15135387f85d3"
+  integrity sha512-8CwA4XCMtso4G6qJWCzqbWQ9YJjtRiD4rUHFJ77rlAXQUN38Ni9E84y4F9qt4ijxZhfpJVm9tRs8E2vdLC4ZqQ==
 
 xhr@^2.4.1:
   version "2.5.0"
