@@ -56,7 +56,7 @@
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-mocha": "^5.0.0",
     "jest": "^23.1.0",
-    "jest-cli": "^23.1.0",
+    "jest-cli": "^27.0.6",
     "jest-environment-node-debug": "^2.0.0",
     "jsonfile": "^4.0.0",
     "prettier": "^1.10.2",
